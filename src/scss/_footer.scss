@@ -1,0 +1,114 @@
+.door {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: 0;
+    width: 200px;
+    height: 50px;
+    box-shadow: inset -7px 0px 12px -8px #0000004d,
+      inset 7px 0px 12px -8px #0000004d;
+    background: transparent ;
+    transition: all 400ms ease-in-out;
+
+  
+    &:hover {
+      background: #fff;
+  
+      .slide {
+        box-shadow: 0px 0px 10px -2px #00000066;
+        transform: scale(1.08);
+        background-color: #fff;
+      }
+  
+      .door-top {
+        top: -50%;
+        
+      }
+  
+      .door-bottom {
+        top: 100%;
+      }
+    }
+  
+    .social-button {
+    padding: 4px 8px 6px 8px;
+    border-radius: 20px;
+    box-shadow: 0 0 2px 0 #000000;
+    background-color: #00224D ;
+    margin-left: -40px;
+    position: absolute;
+    margin-top: -16px;
+    left: 40%;
+    top: 50%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+
+    }
+  }
+  
+  .door-top {
+    top: 0%;
+    left: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  
+    &:before {
+      top: 5px;
+    }
+  }
+  
+  .door-bottom {
+    top: 50%;
+    left: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  
+    &:before {
+      top: -20px;
+    }
+  }
+  
+  .slide {
+    transition: top 400ms, box-shadow 200ms, transform 300ms;
+    transition-timing-function: ease-in-out;
+    background-color: #e0e0e0;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    height: 50%;
+  
+    &:before {
+      font-family: "tweet", sans-serif;
+      position: absolute;
+      margin-left: -14px;
+      margin-top: 8px;
+      // font-size: 24px;
+      display: block;
+      color: red;
+      content: url("../assets/bxs-download.svg");
+      // width: 0px;
+      // height: 20px;
+      left: 52%;
+    }
+  }
+  
+
+  .footer-link {
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.4rem 0.6rem 0.6rem 0.6rem;
+    border-radius: 15px;
+    transition: background 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+
+
+    &:hover{
+        background-color: #F7EEDD20;
+        color: #fff;
+    }
+  }

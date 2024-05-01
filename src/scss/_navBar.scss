@@ -1,0 +1,39 @@
+.navLinkMobile,
+.navLink {
+    color: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;  
+    background-color: transparent;
+}
+
+.navLink {
+    border-radius: 20px;
+    box-shadow: 0 0 0 0 #000000;
+	  transform: scale(1);
+    transition: background-color 0.5s ease;
+	@mixin pulse-animation {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+    
+      &:hover {
+          @include pulse-animation;
+          background-color: #F7EEDD20;
+      }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 #F7EEDD20;
+          }
+          50% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 10px #F7EEDD30;
+          }
+          100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 #F7EEDD20;
+          }
+      }
+
