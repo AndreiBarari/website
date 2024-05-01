@@ -1,54 +1,82 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import SettingsOverscanIcon from "@mui/icons-material/SettingsOverscan";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
 
 const Projects = () => {
-  const cards = [
-    {
-      id: 1,
-      title: "Food Palace",
-      desc: "Website created in order for me to better understand ReactJS",
-      inputId: "slide1",
-      link: "https://github.com/AndreiBarari/Food-Palace",
-    },
-    {
-      id: 2,
-      title: "About Me app",
-      desc: "Website create in order for me to better understand Scss",
-      inputId: "slide2",
-      link: "https://github.com/AndreiBarari/About-me",
-    },
-    {
-      id: 3,
-      title: "Vanilla apps",
-      desc: "A series of small challenges I undertook in order to better understand HTML5, CSS3 and JavaScript",
-      inputId: "slide3",
-      link: "https://github.com/AndreiBarari/Vanilla-apps",
-    },
-    {
-      id: 4,
-      title: "Front-End Mentor",
-      desc: "My completed challenges from FrontendMentor. More to come",
-      inputId: "slide4",
-      link: "https://github.com/AndreiBarari/FrontendMentorProjects",
-    },
-    {
-      id: 5,
-      title: "Coming Soon",
-      desc: "Stay tuned or check my github profile in order to see all my projects",
-      inputId: "slide5",
-      link: "https://github.com/AndreiBarari",
-    },
-  ];
+  const cards = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "Food Palace",
+        desc: "Website created in order for me to better understand ReactJS",
+        inputId: "slide1",
+        link: "https://github.com/AndreiBarari/Food-Palace",
+      },
+      {
+        id: 2,
+        title: "About Me app",
+        desc: "Website create in order for me to better understand Scss",
+        inputId: "slide2",
+        link: "https://github.com/AndreiBarari/About-me",
+      },
+      {
+        id: 3,
+        title: "Vanilla apps",
+        desc: "A series of small challenges I undertook in order to better understand HTML5, CSS3 and JavaScript",
+        inputId: "slide3",
+        link: "https://github.com/AndreiBarari/Vanilla-apps",
+      },
+      {
+        id: 4,
+        title: "Front-End Mentor",
+        desc: "My completed challenges from FrontendMentor. More to come",
+        inputId: "slide4",
+        link: "https://github.com/AndreiBarari/FrontendMentorProjects",
+      },
+      {
+        id: 5,
+        title: "Coming Soon",
+        desc: "Stay tuned or check my github profile in order to see all my projects",
+        inputId: "slide5",
+        link: "https://github.com/AndreiBarari",
+      },
+    ],
+    []
+  );
+
+  const [checkedId, setCheckedId] = useState(null);
+  const [currentChecked, setCurrentChecked] = useState(null);
+
+  useEffect(() => {
+    // Calculate the index of the middle item
+    const middleIndex = Math.floor(cards.length / 2);
+    // Set the checkedId state to the ID of the middle item
+    setCheckedId(cards[middleIndex].id);
+    setCurrentChecked(cards[middleIndex].id);
+  }, [cards]);
+
+  const handleInputChange = (event, cardId) => {
+    if (event.target.checked) {
+      setCurrentChecked(cardId);
+      setCheckedId(cardId);
+    } else {
+      setCurrentChecked(null);
+    }
+  };
 
   return (
-    <div className="projects">
-      <div class="container">
+    <div className="main-content projects">
+      <div className="container">
         {cards.map((card) => (
           <React.Fragment key={card.id}>
-            <input type="radio" name="slide" id={`slide${card.id}`} />
+            <input
+              type="radio"
+              name="slide"
+              id={`slide${card.id}`}
+              checked={currentChecked === card.id}
+              onChange={(event) => handleInputChange(event, card.id)}
+            />
             <label htmlFor={`slide${card.id}`} className="card">
               <div className="row">
                 <div className="description">
@@ -57,7 +85,7 @@ const Projects = () => {
                 </div>
               </div>
               <a
-                href="https://www.google.com"
+                href={card.link}
                 target="_blank"
                 className="preview"
                 rel="noopener noreferrer"

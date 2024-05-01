@@ -1,0 +1,87 @@
+.tech {
+    width: 94vw;  
+    margin: 0 auto;
+    p {
+        margin: 0;
+        line-height: 1.6;
+    }
+    
+    .tech-list {
+        list-style: none;
+        counter-reset: list;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    
+    .tech-item {
+        --stop: calc(100% / var(--length) * var(--i));
+        --l: 62%;
+        --l2: 88%;
+        --h: calc((var(--i) - 1) * (180 / var(--length)));
+        --c1: hsl(var(--h), 71%, var(--l));
+        --c2: hsl(var(--h), 71%, var(--l2));
+        position: relative;
+        counter-increment: list;
+        max-width: 40rem;
+        margin: 1rem;
+        padding: 2rem 1rem 1rem;
+        box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        background-color: white;
+        
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop));
+        }
+        
+    }
+    h3 {
+        display: flex;
+        align-items: baseline;
+        margin: 0 0 1rem 0;
+        color: rgb(70 70 70);
+        
+        &::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            content: counter(list);
+            padding: 1rem;
+            border-radius: 50%;
+            background-color: var(--c1);
+            color: white;
+        }
+    }
+}
+    @media (min-width: 40em) {
+        li {
+            margin: 2rem auto;
+            padding: 3rem 2rem 2rem;
+        }
+        
+        h3 {
+            font-size: 2.25rem;
+            margin: 0 0 2rem;
+        }
+        
+        h3::before {
+            margin-right: 1.5rem;
+        }
+    }
+}
+
+
