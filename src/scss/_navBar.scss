@@ -1,12 +1,16 @@
 .navLinkMobile,
 .navLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
     color: inherit;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;  
+    padding: 0.4rem 0.8rem;  
     background-color: transparent;
+    text-align: start;
 }
-
 .navLink {
     border-radius: 20px;
     box-shadow: 0 0 0 0 #000000;
@@ -24,16 +28,26 @@
 
     @keyframes pulse {
         0% {
-            transform: scale(1);
             box-shadow: 0 0 0 0 #F7EEDD20;
           }
           50% {
-            transform: scale(1.1);
             box-shadow: 0 0 0 10px #F7EEDD30;
           }
           100% {
-            transform: scale(1);
             box-shadow: 0 0 0 0 #F7EEDD20;
           }
       }
 
+      #menu-appbar {
+        ul {
+            background-color: $dark-blue;
+            color: #fff;
+        }
+    }
+
+    .navLinkMobile {
+      border-radius: 10px;
+      &:hover{
+        background-color: #F7EEDD20;
+      }
+    }

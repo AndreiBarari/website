@@ -3,17 +3,17 @@
 @import 'footer';
 @import 'projects';
 @import 'skills';
+@import 'about';
 
 
 body {
-    background-color: #eeeeee;
-    // background: #26323D;
+    background-color: $light-grey;
     background-image: radial-gradient(transparent 65%, rgba(black, 0.3));
     font-family: sans-serif;
 }
 
 .main-content {
-
     min-height: 94vh;
     display:flex;
 }
+

@@ -1,4 +1,4 @@
-import { List, ListItem, Typography } from "@mui/material";
+import { List, Typography } from "@mui/material";
 import React from "react";
 
 const Skills = () => {
@@ -22,17 +22,18 @@ const Skills = () => {
       stage: 5,
     },
     {
-      title: "ReactJS",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.",
-      stage: 3,
-    },
-    {
       title: "NodeJS",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.",
       stage: 2,
     },
+    {
+      title: "ReactJS",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.",
+      stage: 4,
+    },
+
     {
       title: "MaterialUI",
       description:
@@ -44,6 +45,12 @@ const Skills = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.",
       stage: 4,
+    },
+    {
+      title: "MongoDB",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.",
+      stage: 2,
     },
   ];
 

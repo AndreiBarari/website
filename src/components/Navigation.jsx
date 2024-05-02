@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -13,8 +13,14 @@ import {
   Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
+import FolderCopyIcon from "@mui/icons-material/FolderCopy";
+import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
+import HelpIcon from "@mui/icons-material/Help";
+import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 
 const Navigation = (props) => {
+  const location = useLocation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -26,19 +32,28 @@ const Navigation = (props) => {
   };
 
   const links = [
-    { path: "/", name: "Home" },
-    { path: "/projects", name: "Portofoliu" },
-    { path: "/skills", name: "Skills" },
-    { path: "/about", name: "About Me" },
-    { path: "/contact", name: "Contact Me" },
+    { path: "/", name: "Home", icon: <HomeIcon /> },
+    { path: "/projects", name: "Portfolio", icon: <FolderCopyIcon /> },
+    { path: "/skills", name: "Skills", icon: <MilitaryTechIcon /> },
+    { path: "/about", name: "About Me", icon: <HelpIcon /> },
+    {
+      path: "/contact",
+      name: "Contact Me",
+      icon: <ConnectWithoutContactIcon />,
+    },
   ];
 
   return (
     <>
       <AppBar position="static">
         <Container sx={{ backgroundColor: "#00224D" }} maxWidth="xxl">
-          <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Toolbar id="back-to-top-anchor" disableGutters>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+              }}
+            >
               {/* Mobile menu */}
               <IconButton
                 size="large"
@@ -84,7 +99,10 @@ const Navigation = (props) => {
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
                   sx={{
-                    display: { xs: "block", md: "none" },
+                    display: {
+                      xs: "block",
+                      md: "none",
+                    },
                   }}
                 >
                   <Stack textAlign="center">
@@ -95,6 +113,7 @@ const Navigation = (props) => {
                         key={link.path}
                         to={link.path}
                       >
+                        {link.icon}
                         {link.name}
                       </Link>
                     ))}
@@ -104,24 +123,37 @@ const Navigation = (props) => {
             </Box>
 
             {/* Desktop menu */}
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
+            >
               {links.map((link) => (
                 <Button
                   key={link.path}
                   onClick={handleCloseNavMenu}
                   disableRipple
                   sx={{
-                    color: "white",
-                    display: "block",
+                    color: "inherit",
+                    padding: 0,
+                    margin: "0 0.4rem",
+                    borderRadius: "25px",
+                    backgroundColor:
+                      location.pathname === link.path
+                        ? "#ffffff20"
+                        : "transparent",
                   }}
                 >
                   <NavLink key={link.path} className="navLink" to={link.path}>
+                    {link.icon}
                     {link.name}
                   </NavLink>
                 </Button>
               ))}
             </Box>
 
+            {/* Avatar Icon */}
             <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
           </Toolbar>
         </Container>

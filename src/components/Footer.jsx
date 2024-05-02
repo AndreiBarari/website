@@ -13,8 +13,8 @@ const Footer = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const links = [
-    { path: "/projects", name: "Portofoliu" },
-    { path: "/tech", name: "Tech" },
+    { path: "/projects", name: "Portfolio" },
+    { path: "/skills", name: "Skills" },
     { path: "/about", name: "About Me" },
     { path: "/contact", name: "Contact Me" },
   ];
