@@ -36,7 +36,7 @@
         
         &::before {
             content: 'Progress';
-            font-size: 14px;
+            font-size: 1rem;
             font-weight: 600;
             padding: 0.2rem 1rem;
             display: block;
@@ -53,6 +53,7 @@
         display: flex;
         align-items: baseline;
         margin: 0 0 1rem 0;  
+        font-size: 2rem;
         &::before {
             display: flex;
             justify-content: center;
@@ -76,7 +77,6 @@
         }
         
         h3 {
-            font-size: 2.25rem;
             margin: 0 0 2rem;
         }
         

@@ -1,0 +1,59 @@
+.home{
+    align-items: center;
+    color: $dark-blue;
+
+    .diamond-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,.2));
+        transform: rotateZ(0);
+    
+        &__item {
+          position: relative;
+          width: 220px;
+          height: 220px;
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          transition: all .3s ease-in-out;
+    
+          &:nth-child(2) {
+            top: $diamond-grid-offset;
+            &:hover{
+                top: 100px;
+            }
+          }
+    
+          &:nth-child(8) {
+            bottom: $diamond-grid-offset;
+            &:hover{
+                bottom: 100px;
+            }
+          }
+    
+          &:nth-child(4) {
+            left: $diamond-grid-offset;
+            &:hover{
+                left: 100px;
+            }
+          }
+    
+          &:nth-child(6) {
+            right: $diamond-grid-offset;
+            &:hover{
+                right: 100px;
+            }
+          }
+        }
+    }    
+}
+
+@media (max-width: 680px) {
+    .home {
+        .diamond-grid{
+            &__item {
+                width: 112px;
+                height: 112px;
+            }
+        }
+    }
+}
