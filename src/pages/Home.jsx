@@ -1,82 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Grid, Button, Stack, Typography } from "@mui/material";
+import { Container, Grid, Stack, Typography } from "@mui/material";
 import desktop from "../assets/home-desktop.jpg";
 import laptop from "../assets/home-laptop.jpg";
 import tablet from "../assets/home-tablet.jpg";
 import phone from "../assets/home-phone.jpg";
+import {
+  AboutButton,
+  ContactButton,
+} from "../components/homeComponents/CallToAction";
+
+const homeContentStyles = {
+  flex: 1,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+};
 
 const Home = () => {
   return (
     <div className="main-content home">
       <Container sx={{ display: "flex", flexWrap: "wrap" }}>
-        <Grid
-          item
-          xs={6}
-          sx={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
+        <Grid item xs={6} sx={homeContentStyles}>
           <Typography variant="h2">Web Developer</Typography>
-          <Typography my="2rem" fontSize="1.2rem">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            euismod justo non nunc dictum, in rhoncus sapien
+          <Typography
+            my="2rem"
+            fontSize="1.2rem"
+            sx={{
+              background: "#ffffff80",
+              padding: "1rem",
+              borderRadius: "10px",
+            }}
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
+            sunt voluptatum ipsam quod quia, laudantium ad facilis maiores odio,
+            aut voluptatibus dolor rem quam. Ratione magni impedit quos
+            reiciendis ut. Praesentium recusandae hic distinctio ad laborum
+            voluptas nulla est voluptatibus expedita vitae placeat suscipit
+            quasi nemo quibusdam enim, dicta obcaecati optio vero fugit! Ducimus
+            blanditiis magnam excepturi molestiae culpa facere.
           </Typography>
-
           <Stack sx={{ display: "flex", gap: "2rem", flexDirection: "row" }}>
-            <Link
-              className="home-link"
-              to="/about"
-              style={{ textDecoration: "none" }}
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  color: "#fff",
-                  background: "#00224D",
-                  border: "2px solid #00224D",
-                  fontWeight: 700,
-                  "&:hover": {
-                    backgroundColor: "#e0e0e0",
-                    color: "#00224D",
-                  },
-                }}
-              >
-                About Me
-              </Button>
-            </Link>
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <Button
-                variant="contained"
-                sx={{
-                  border: "2px solid #00224D",
-                  color: "#00224D",
-                  fontWeight: 700,
-                  background: "#e0e0e0",
-                  "&:hover": {
-                    color: "#fff",
-                    background: "#00224D",
-                  },
-                }}
-              >
-                Contact Me
-              </Button>
-            </Link>
+            <AboutButton />
+            <ContactButton />
           </Stack>
         </Grid>
-        <Grid
-          item
-          xs={6}
-          style={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <Grid item xs={6} sx={homeContentStyles}>
           <div class="diamond-grid">
             <div></div>
             <img src={desktop} alt="" class="diamond-grid__item" />

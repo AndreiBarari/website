@@ -43,7 +43,16 @@ const About = () => {
           height: "360px",
         }}
       ></Box>
-      <Typography variant="body1" textAlign="center" maxWidth="780px">
+      <Typography
+        variant="body1"
+        textAlign="center"
+        maxWidth="780px"
+        sx={{
+          background: "#ffffff80",
+          padding: "1rem",
+          borderRadius: "10px",
+        }}
+      >
         I am a self-taught web developer with a passion for crafting dynamic,
         interactive, and responsive web applications. My analytical mindset,
         combined with a background in economics, allows me to create

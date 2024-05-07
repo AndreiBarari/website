@@ -11,34 +11,55 @@
     
         &__item {
           position: relative;
-          width: 220px;
-          height: 220px;
+          width: 14rem;
+          height: 14rem;
           clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
           transition: all .3s ease-in-out;
     
           &:nth-child(2) {
             top: $diamond-grid-offset;
+          }
+    
+          &:nth-child(8) {
+            bottom: $diamond-grid-offset;
+          }
+    
+          &:nth-child(4) {
+            left: $diamond-grid-offset;
+          }
+    
+          &:nth-child(6) {
+            right: $diamond-grid-offset;
+          }
+        }
+    }    
+}
+
+@media (min-width: 680px) {
+  .home{
+    .diamond-grid {
+        &__item {
+          transition: all .3s ease-in-out;
+    
+          &:nth-child(2) {
             &:hover{
                 top: 100px;
             }
           }
     
           &:nth-child(8) {
-            bottom: $diamond-grid-offset;
             &:hover{
                 bottom: 100px;
             }
           }
     
           &:nth-child(4) {
-            left: $diamond-grid-offset;
             &:hover{
                 left: 100px;
             }
           }
     
           &:nth-child(6) {
-            right: $diamond-grid-offset;
             &:hover{
                 right: 100px;
             }
@@ -46,7 +67,7 @@
         }
     }    
 }
-
+}
 @media (max-width: 680px) {
     .home {
         .diamond-grid{
