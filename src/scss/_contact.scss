@@ -1,0 +1,11 @@
+.contact {
+    align-items: center;
+    color: $dark-blue;
+    .emailLink {
+        color: $dark-blue;
+
+        &:hover {
+            color: $lighit-blue;
+        }
+    }
+}

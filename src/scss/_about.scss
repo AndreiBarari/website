@@ -39,7 +39,8 @@
             justify-content: space-evenly;
             height: 280px;
             width: 100%;
-            background-color: #ffffff80;
+            background: map-get($my-styles, background-color);
+            backdrop-filter: map-get($my-styles, backdrop-filter);
             border-radius: 10px;
             border-bottom: 0.6rem solid $dark-blue;
             padding: 2rem 3rem;

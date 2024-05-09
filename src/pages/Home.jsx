@@ -25,7 +25,8 @@ const Home = () => {
             my="2rem"
             fontSize="1.2rem"
             sx={{
-              background: "#ffffff80",
+              background: "#ffffff26",
+              backdropFilter: "blur(5px)",
               padding: "1rem",
               borderRadius: "10px",
             }}

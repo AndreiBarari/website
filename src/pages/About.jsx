@@ -48,7 +48,8 @@ const About = () => {
         textAlign="center"
         maxWidth="780px"
         sx={{
-          background: "#ffffff80",
+          background: "#ffffff26",
+          backdropFilter: "blur(5px)",
           padding: "1rem",
           borderRadius: "10px",
         }}
