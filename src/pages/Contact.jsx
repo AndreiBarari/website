@@ -1,5 +1,7 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import {
+  FormControl,
   Container,
   Grid,
   TextField,
@@ -22,7 +24,8 @@ const submitBtnStyles = {
 };
 
 const gridItemStyles = {
-  padding: "1rem",
+  padding: "1rem 2rem",
+  borderRadius: "10px",
   transition: "background .4s ease",
   ":hover": {
     background: "#ffffff46",
@@ -31,6 +34,18 @@ const gridItemStyles = {
 
 const Contact = () => {
   const email = "b.andrei91@yahoo.com";
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    // Handle form submission
+    console.log(data);
+    reset();
+  };
 
   return (
     <div
@@ -42,16 +57,17 @@ const Contact = () => {
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <Container>
         <Grid
           container
           spacing={3}
           sx={{
-            height: "100%",
+            width: "100%",
             borderRadius: "10px",
             overflow: "hidden",
             background: "#ffffff26",
             backdropFilter: "blur(5px)",
+            margin: "0 auto",
           }}
         >
           <Grid
@@ -62,6 +78,7 @@ const Contact = () => {
               ...gridItemStyles,
               display: "flex",
               flexDirection: "column",
+              justifyContent: "center",
               gap: "1rem",
             }}
           >
@@ -85,8 +102,10 @@ const Contact = () => {
           </Grid>
           <Grid xs={12} sm={12} md={6} sx={gridItemStyles}>
             <Typography variant="h4">Contact Us</Typography>
-            <div
-              style={{
+            <FormControl
+              component="form"
+              onSubmit={handleSubmit(onSubmit)}
+              sx={{
                 display: "flex",
                 gap: "1rem",
                 flexWrap: "wrap",
@@ -101,6 +120,9 @@ const Contact = () => {
                 label="Name"
                 variant="outlined"
                 fullWidth
+                {...register("name", { required: true })}
+                error={Boolean(errors.name)}
+                helperText={errors.name ? "Name is required" : null}
               />
               <TextField
                 id="outlined-email-input"
@@ -109,6 +131,12 @@ const Contact = () => {
                 label="Email"
                 variant="outlined"
                 fullWidth
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+                error={Boolean(errors.email)}
+                helperText={errors.email ? "Invalid email address" : null}
               />
               <TextField
                 id="outlined-multiline-flexible"
@@ -117,16 +145,20 @@ const Contact = () => {
                 rows={4}
                 fullWidth
                 variant="outlined"
+                {...register("message", { required: true })}
+                error={Boolean(errors.message)}
+                helperText={errors.message ? "Message is required" : null}
               />
               <Button
                 variant="contained"
                 color="primary"
                 fullWidth
                 sx={submitBtnStyles}
+                type="submit"
               >
                 Submit
               </Button>
-            </div>
+            </FormControl>
           </Grid>
         </Grid>
       </Container>
