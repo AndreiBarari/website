@@ -11,18 +11,6 @@ import {
 } from "@mui/material";
 import CopyEmail from "../components/contactComponents/CopyEmail";
 
-const submitBtnStyles = {
-  color: "#fff",
-  background: "#00224D",
-  border: "2px solid #00224D",
-  marginBottom: 10,
-  fontWeight: 700,
-  "&:hover": {
-    backgroundColor: "transparent",
-    color: "#00224D",
-  },
-};
-
 const gridItemStyles = {
   padding: "1rem 2rem",
   borderRadius: "10px",
@@ -83,8 +71,8 @@ const Contact = () => {
             }}
           >
             <Stack>
-              <Typography variant="h4">Address</Typography>
-              <Typography variant="h6">Chinteni, Cluj</Typography>
+              <Typography variant="h4">Location</Typography>
+              <Typography variant="h6">Cluj-Napoca</Typography>
             </Stack>
             <Stack>
               <Typography variant="h4">Contact Information</Typography>
@@ -101,7 +89,7 @@ const Contact = () => {
             </Stack>
           </Grid>
           <Grid xs={12} sm={12} md={6} sx={gridItemStyles}>
-            <Typography variant="h4">Contact Us</Typography>
+            <Typography variant="h4">Contact me</Typography>
             <FormControl
               component="form"
               onSubmit={handleSubmit(onSubmit)}
@@ -120,6 +108,7 @@ const Contact = () => {
                 label="Name"
                 variant="outlined"
                 fullWidth
+                color="warning"
                 {...register("name", { required: true })}
                 error={Boolean(errors.name)}
                 helperText={errors.name ? "Name is required" : null}
@@ -131,6 +120,7 @@ const Contact = () => {
                 label="Email"
                 variant="outlined"
                 fullWidth
+                color="warning"
                 {...register("email", {
                   required: true,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -144,6 +134,7 @@ const Contact = () => {
                 multiline
                 rows={4}
                 fullWidth
+                color="warning"
                 variant="outlined"
                 {...register("message", { required: true })}
                 error={Boolean(errors.message)}
@@ -153,7 +144,8 @@ const Contact = () => {
                 variant="contained"
                 color="primary"
                 fullWidth
-                sx={submitBtnStyles}
+                sx={{ marginBottom: 10 }}
+                className="cta-button"
                 type="submit"
               >
                 Submit

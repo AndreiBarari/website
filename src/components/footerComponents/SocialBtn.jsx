@@ -21,7 +21,8 @@ const SocialBtn = (props) => {
         href={props.path}
         target="_blank"
         sx={{
-          color: "#e0e0e0",
+          color: "#ff6600",
+          fontSize: "2rem",
           transition: "all 0.2s ease-in-out",
           "&:hover": {
             backgroundColor: "#F7EEDD20",

@@ -15,7 +15,9 @@ const Layout = () => {
       <Outlet />
       <ScrollToTop>
         <Fab size="medium" aria-label="scroll back to top">
-          <KeyboardDoubleArrowUpIcon />
+          <KeyboardDoubleArrowUpIcon
+            sx={{ color: "#ff6600", fontSize: "2rem" }}
+          />
         </Fab>
       </ScrollToTop>
       <Footer />

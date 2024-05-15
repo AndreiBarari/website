@@ -9,7 +9,7 @@ export const ResumeBox = (props) => {
         href={process.env.PUBLIC_URL + "resume.pdf"}
         target="_blank"
         rel="noopener noreferrer"
-        className="social-button"
+        className="resume-btn"
       >
         Andrei's Resume
       </a>

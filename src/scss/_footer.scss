@@ -3,13 +3,13 @@
     top: 50%;
     left: 50%;
     margin-left: -100px;
-    margin-top: 0;
+    margin-top: 6px;
     width: 200px;
     height: 50px;
     box-shadow: inset -7px 0px 12px -8px #0000004d,
       inset 7px 0px 12px -8px #0000004d;
     background: transparent ;
-    transition: all 400ms ease-in-out;
+    transition: all .4s ease-in-out;
 
   
     &:hover {
@@ -31,20 +31,25 @@
       }
     }
   
-    .social-button {
+    .resume-btn {
     padding: 0.5rem 1rem;
     border-radius: 10px;
     box-shadow: 0 0 2px 0 #000000;
-    background-color: $dark-blue ;
+    background-color: transparent ;
     margin-left: -50px;
     position: absolute;
-    margin-top: -16px;
+    margin-top: -20px;
     left: 40%;
     top: 50%;
     font-size: 0.9rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: $cta-color;
+    border: 2px solid $cta-color;
+    transition: all .2s ease-in-out;
 
+    &:hover {
+      color: $dark-blue;
+      border-color: $dark-blue;
     }
   }
   
@@ -81,30 +86,29 @@
     height: 50%;
   
     &:before {
-      font-family: "tweet", sans-serif;
       position: absolute;
-      margin-left: -14px;
+      left: 45%;
       margin-top: 8px;
       display: block;
       content: url("../assets/bxs-download.svg");
-      left: 52%;
     }
   }
   
 
-  .footer-link {
-    color:  $light-grey;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.4rem 0.6rem;
-    border-radius: 15px;
-    transition: background 0.2s ease-in-out;
-    display: flex;
-    align-items: center;
+}
+.footer-link {
+  color:  $cta-color;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.4rem 0.6rem;
+  border-radius: 15px;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
 
 
-    &:hover{
-        background-color: #F7EEDD20;
-        color: #fff;
-    }
+  &:hover{
+      background-color: #F7EEDD20;
+      color: #fff;
   }
+}

@@ -3,10 +3,10 @@
     justify-content: center;
     color: $dark-blue;
     .emailLink {
-        color: $dark-blue;
-
+        color: $cta-color;
+        
         &:hover {
-            color: $lighit-blue;
+            color: $dark-blue;
         }
     }
 }

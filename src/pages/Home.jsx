@@ -3,10 +3,7 @@ import desktop from "../assets/home-desktop.jpg";
 import laptop from "../assets/home-laptop.jpg";
 import tablet from "../assets/home-tablet.jpg";
 import phone from "../assets/home-phone.jpg";
-import {
-  AboutButton,
-  ContactButton,
-} from "../components/homeComponents/CallToAction";
+import { CtaButton } from "../components/homeComponents/CallToAction";
 
 const homeContentStyles = {
   flex: 1,
@@ -40,8 +37,8 @@ const Home = () => {
             blanditiis magnam excepturi molestiae culpa facere.
           </Typography>
           <Stack sx={{ display: "flex", gap: "2rem", flexDirection: "row" }}>
-            <AboutButton />
-            <ContactButton />
+            <CtaButton path="/about" />
+            <CtaButton path="/contact" />
           </Stack>
         </Grid>
         <Grid item xs={6} sx={homeContentStyles}>

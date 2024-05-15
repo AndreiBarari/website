@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import SettingsOverscanIcon from "@mui/icons-material/SettingsOverscan";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import { IconButton } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { IconButton, Typography } from "@mui/material";
 
 const Projects = () => {
   const cards = useMemo(
@@ -67,6 +67,9 @@ const Projects = () => {
 
   return (
     <div className="main-content projects">
+      <Typography variant="h2" sx={{ color: "#00224D" }}>
+        My projects
+      </Typography>
       <div className="container">
         {cards.map((card) => (
           <React.Fragment key={card.id}>
@@ -98,11 +101,11 @@ const Projects = () => {
                     margin: "0 auto",
                     borderRadius: "1rem",
                     "&:hover": {
-                      background: "#ffffff40",
+                      background: "#ff660040",
                     },
                   }}
                 >
-                  <VisibilityIcon sx={{ color: "#fff" }} />
+                  <GitHubIcon sx={{ color: "#ff6600", fontSize: "2.5rem" }} />
                 </IconButton>
               </a>
               <div className="icon">

@@ -20,21 +20,21 @@ const Footer = () => {
   ];
   const socialLinks = [
     {
-      icon: <GitHubIcon />,
+      icon: <GitHubIcon fontSize="1rem" />,
       id: "1",
       path: "https://github.com/AndreiBarari",
       name: "GitHub",
     },
 
     {
-      icon: <LinkedInIcon />,
+      icon: <LinkedInIcon fontSize="1rem" />,
       id: "2",
       path: "https://www.linkedin.com/in/andrei-barari-29946489/?locale=en_US",
       name: "LinkedIn",
     },
 
     {
-      icon: <FacebookIcon />,
+      icon: <FacebookIcon fontSize="1rem" />,
       id: "3",
       path: "https://www.facebook.com/barari.andrei",
       name: "Facebook",

@@ -21,13 +21,13 @@
 // variables
 $light-grey: #e0e0e0;
 $dark-blue: #00224D;
-$lighit-blue : #10439F;
+// $cta-color : #6699cc;
+// $cta-color : #6b2400;
+$cta-color : #ff6600;
 
 $diamond-grid-gap: 0.2rem;
 $diamond-grid-offset: calc(50% - $diamond-grid-gap);
 
 // frosted glass effect
-$my-styles: (
-  background-color: #ffffff26,
-  backdrop-filter: blur(5px)
-);
+  $frosted-color: #ffffff26;
+  $frosted-filter: blur(5px);
