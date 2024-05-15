@@ -92,7 +92,7 @@ const strongSkillsData = [
 
 export const StrongSkills = () => {
   return (
-    <div className="area">
+    <div className="area reveal">
       <Typography variant="h4">Work Skills</Typography>
       <Grid container>
         {strongSkillsData.map((item) => (
@@ -115,7 +115,7 @@ export const StrongSkills = () => {
 };
 export const SoftSkills = () => {
   return (
-    <div className="area">
+    <div className="area reveal">
       <Typography variant="h4">Soft Skills</Typography>
       <Grid container>
         {softSkillsData.map((item) => (

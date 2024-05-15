@@ -6,8 +6,8 @@ import phone from "../assets/home-phone.jpg";
 import { CtaButton } from "../components/homeComponents/CallToAction";
 
 const homeContentStyles = {
-  flex: 1,
   display: "flex",
+  flex: 1,
   flexDirection: "column",
   justifyContent: "center",
 };
@@ -15,33 +15,35 @@ const homeContentStyles = {
 const Home = () => {
   return (
     <div className="main-content home">
-      <Container sx={{ display: "flex", flexWrap: "wrap" }}>
-        <Grid item xs={6} sx={homeContentStyles}>
-          <Typography variant="h2">Web Developer</Typography>
+      <Container
+        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      >
+        <Grid item xs={6} sx={{ ...homeContentStyles, gap: "4rem" }}>
           <Typography
-            my="2rem"
-            fontSize="1.2rem"
+            variant="h3"
             sx={{
-              background: "#ffffff26",
+              backgroundColor: "#ffffff26",
               backdropFilter: "blur(5px)",
-              padding: "1rem",
+              padding: "0.5rem 1rem",
               borderRadius: "10px",
             }}
+            className="reveal"
           >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
-            sunt voluptatum ipsam quod quia, laudantium ad facilis maiores odio,
-            aut voluptatibus dolor rem quam. Ratione magni impedit quos
-            reiciendis ut. Praesentium recusandae hic distinctio ad laborum
-            voluptas nulla est voluptatibus expedita vitae placeat suscipit
-            quasi nemo quibusdam enim, dicta obcaecati optio vero fugit! Ducimus
-            blanditiis magnam excepturi molestiae culpa facere.
+            My name is Andrei, and I'm a web developer!
           </Typography>
-          <Stack sx={{ display: "flex", gap: "2rem", flexDirection: "row" }}>
-            <CtaButton path="/about" />
-            <CtaButton path="/contact" />
+          <Stack
+            sx={{
+              display: "flex",
+              gap: "2rem",
+              flexDirection: "row",
+              padding: "0.5rem 1rem",
+            }}
+          >
+            <CtaButton name="About Me" path="/about" />
+            <CtaButton name="Contact" path="/contact" />
           </Stack>
         </Grid>
-        <Grid item xs={6} sx={homeContentStyles}>
+        <Grid item xs={6}>
           <div class="diamond-grid">
             <div></div>
             <img src={desktop} alt="" class="diamond-grid__item" />

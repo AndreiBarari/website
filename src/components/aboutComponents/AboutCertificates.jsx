@@ -29,7 +29,7 @@ const educationData = [
 
 const AboutCertificates = () => {
   return (
-    <div className="area">
+    <div className="area reveal">
       <Typography variant="h4">Certificates</Typography>
 
       {educationData.map((item) => (

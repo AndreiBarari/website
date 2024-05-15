@@ -67,7 +67,16 @@ const Projects = () => {
 
   return (
     <div className="main-content projects">
-      <Typography variant="h2" sx={{ color: "#00224D" }}>
+      <Typography
+        variant="h2"
+        sx={{
+          color: "#00224d",
+          backgroundColor: "#ffffff26",
+          backdropFilter: "blur(5px)",
+          padding: "0.5rem 1rem",
+          borderRadius: "10px",
+        }}
+      >
         My projects
       </Typography>
       <div className="container">

@@ -51,7 +51,7 @@ const workExperienceData = [
 
 const AboutExperience = () => {
   return (
-    <div className="area">
+    <div className="area reveal">
       <Typography variant="h4">Work Experience</Typography>
       <Container
         sx={{

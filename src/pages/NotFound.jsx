@@ -33,7 +33,7 @@ const NotFound = () => {
           The page you are looking for does not exist, please return to{" "}
           <IconButton>
             <Link to="/">
-              <HomeIcon sx={{ color: "#00224D", fontSize: "2.5rem" }} />
+              <HomeIcon sx={{ color: "#ff6600", fontSize: "2.5rem" }} />
             </Link>
           </IconButton>{" "}
           page!

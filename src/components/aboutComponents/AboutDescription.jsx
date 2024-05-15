@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutDescription = () => {
   return (
-    <div className="area">
+    <div className="area reveal">
       <Typography variant="h4">Who am I?</Typography>
       <Typography variant="body1">
         I am a self-taught web developer with a passion for crafting dynamic,
