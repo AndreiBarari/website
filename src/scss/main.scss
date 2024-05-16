@@ -37,44 +37,43 @@ body {
         }
     }
     
-    .reveal {
-        position: relative;
-        display: inline-block;
-        animation-name: appear;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        animation-delay: .5s;
-        animation-timing-function: cubic-bezier(0.4,0,0.2,1);
-        &:after {
-          content: '';
-          position: absolute;
-          top: 0; bottom: 0; left: 0; right: 0;
-          width: 100%; height: 100%;
-          background-color: $light-grey;
-          animation-name: reveal;
-          animation-duration: inherit;
-          animation-fill-mode: inherit;
-          animation-delay: inherit;
-          animation-timing-function: inherit;
-          & + & {
-            animation-delay: 1s;
-          }
-        }
-      }
-      
-      // animations
-      @keyframes reveal {
-        from { transform: scaleX(0); transform-origin: left; }
-        40% { transform: scaleX(1); transform-origin: left; }
-        60% { transform: scaleX(1); transform-origin: right; }
-        to { transform: scaleX(0); transform-origin: right; }
-      }
-      
-      @keyframes appear {
-        from { color: transparent; }
-        40% { color: transparent; }
-        60% { color: inherit; }
-        to { color: inherit; }
-      }
-}
+  }
 
+.reveal {
+  position: relative;
+  display: inline-block;
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 200ms;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%; height: 100%;
+    background-color: $light-grey;
+    animation-name: reveal;
+    animation-duration: inherit;
+    animation-fill-mode: inherit;
+    animation-delay: inherit;
+    animation-timing-function: inherit;
+  }
+  & + & {
+    animation-delay: 1000ms;
+  }
+  
+  @keyframes reveal {
+    from { transform: scaleX(0); transform-origin: left; }
+    40% { transform: scaleX(1); transform-origin: left; }
+    60% { transform: scaleX(1); transform-origin: right; }
+    to { transform: scaleX(0); transform-origin: right; }
+  }
+  
+  @keyframes appear {
+    from { color: transparent; }
+    40% { color: transparent; }
+    60% { color: inherit; }
+    to { color: inherit; }
+  }
+}

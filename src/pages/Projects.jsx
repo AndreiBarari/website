@@ -46,6 +46,7 @@ const Projects = () => {
   );
 
   const [checkedId, setCheckedId] = useState(null);
+  console.log(checkedId);
   const [currentChecked, setCurrentChecked] = useState(null);
 
   useEffect(() => {

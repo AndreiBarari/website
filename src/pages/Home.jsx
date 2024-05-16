@@ -6,7 +6,7 @@ import phone from "../assets/home-phone.jpg";
 import { CtaButton } from "../components/homeComponents/CallToAction";
 
 const homeContentStyles = {
-  display: "flex",
+  display: "inline-flex",
   flex: 1,
   flexDirection: "column",
   justifyContent: "center",
@@ -19,18 +19,23 @@ const Home = () => {
         sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
         <Grid item xs={6} sx={{ ...homeContentStyles, gap: "4rem" }}>
-          <Typography
-            variant="h3"
+          <Stack
             sx={{
               backgroundColor: "#ffffff26",
               backdropFilter: "blur(5px)",
               padding: "0.5rem 1rem",
               borderRadius: "10px",
+              width: "clamp(340px, 100%, 720px)",
+              textAlign: "center",
             }}
-            className="reveal"
           >
-            My name is Andrei, and I'm a web developer!
-          </Typography>
+            <Typography variant="h3" className="reveal">
+              My name is Andrei,
+            </Typography>
+            <Typography variant="h3" className="reveal">
+              I'm a web developer!
+            </Typography>
+          </Stack>
           <Stack
             sx={{
               display: "flex",
