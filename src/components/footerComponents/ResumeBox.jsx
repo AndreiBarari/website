@@ -11,7 +11,7 @@ export const ResumeBox = (props) => {
         rel="noopener noreferrer"
         className="resume-btn"
       >
-        Andrei's Resume
+        Resume
       </a>
     </div>
   );

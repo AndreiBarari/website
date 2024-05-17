@@ -73,11 +73,11 @@ const Navigation = (props) => {
                   vertical: "bottom",
                   horizontal: "left",
                 }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
+                // keepMounted
+                // transformOrigin={{
+                //   vertical: "top",
+                //   horizontal: "left",
+                // }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
@@ -91,11 +91,11 @@ const Navigation = (props) => {
                     vertical: "bottom",
                     horizontal: "left",
                   }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                  }}
+                  // keepMounted
+                  // transformOrigin={{
+                  //   vertical: "top",
+                  //   horizontal: "left",
+                  // }}
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
                   sx={{

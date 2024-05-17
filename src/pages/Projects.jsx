@@ -71,12 +71,13 @@ const Projects = () => {
       <Typography
         variant="h2"
         sx={{
-          color: "#00224d",
           backgroundColor: "#ffffff26",
           backdropFilter: "blur(5px)",
           padding: "0.5rem 1rem",
           borderRadius: "10px",
+          margin: "0 auto",
         }}
+        className="reveal"
       >
         My projects
       </Typography>

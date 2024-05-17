@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import {
   FormControl,
@@ -21,6 +22,8 @@ const gridItemStyles = {
 };
 
 const Contact = () => {
+  const form = useRef();
+
   const email = "b.andrei91@yahoo.com";
   const {
     register,
@@ -29,9 +32,19 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Handle form submission
-    console.log(data);
+  const onSubmit = () => {
+    emailjs
+      .sendForm("service_9f0316n", "template_2tnwyvi", form.current, {
+        publicKey: "YiGOHRuuU1FcA-kNl",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("Failed!", error.text);
+        }
+      );
     reset();
   };
 
@@ -91,6 +104,7 @@ const Contact = () => {
           <Grid xs={12} sm={12} md={6} sx={gridItemStyles}>
             <Typography variant="h4">Contact me</Typography>
             <FormControl
+              ref={form}
               component="form"
               onSubmit={handleSubmit(onSubmit)}
               sx={{
@@ -106,6 +120,7 @@ const Contact = () => {
               <TextField
                 id="outlined-name"
                 label="Name"
+                name="user_name"
                 variant="outlined"
                 fullWidth
                 color="warning"
@@ -116,8 +131,8 @@ const Contact = () => {
               <TextField
                 id="outlined-email-input"
                 type="email"
-                name="email"
                 label="Email"
+                name="user_email"
                 variant="outlined"
                 fullWidth
                 color="warning"
@@ -131,6 +146,7 @@ const Contact = () => {
               <TextField
                 id="outlined-multiline-flexible"
                 label="Message"
+                name="message"
                 multiline
                 rows={4}
                 fullWidth

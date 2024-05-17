@@ -34,12 +34,13 @@ const Typewriter = () => {
     <Typography
       variant="subtitle1"
       sx={{
-        backgroundColor: "#fff",
-        color: "#00224d",
+        backgroundColor: "#00224D",
+        color: "#fff",
         padding: "0.2rem 0.4rem",
         borderRadius: "10px",
         maxWidth: "fit-content",
         fontSize: "1.1rem",
+        fontWeight: "700",
       }}
       className="typewriter"
     >

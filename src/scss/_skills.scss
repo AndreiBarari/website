@@ -1,6 +1,7 @@
 .skills {
     width: 94vw;  
     margin: 0 auto;
+    padding: 0 1rem;
     color: $dark-blue;
 
 
@@ -10,9 +11,30 @@
         width: 80%;
         margin: 0 auto;
 
-        @media screen and (max-width: 1240px) {
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .skills{
+        width: 100%;
+        #timeline{
+            li{
+                &::before {
+                    content: "";
+                    padding: 0;
+                    -webkit-flex: 0;
+                    -ms-flex: 0;
+                    flex: 0;
+
+                }
+            }
+        }
+    }   
+}
+@media screen and (max-width: 1440px) {
+    .skills{
+        #timeline{
             flex-grow: 1;
         }
-    }
-    }
-    
+    }   
+}
