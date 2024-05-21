@@ -17,7 +17,7 @@ import FolderCopyIcon from "@mui/icons-material/FolderCopy";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import HelpIcon from "@mui/icons-material/Help";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import Typewriter from "./navComponents/Typewriter";
+// import Typewriter from "./navComponents/Typewriter";
 
 const Navigation = (props) => {
   const location = useLocation();
@@ -154,7 +154,7 @@ const Navigation = (props) => {
             </Box>
 
             {/* Typewriter section */}
-            <Typewriter />
+            {/* <Typewriter /> */}
           </Toolbar>
         </Container>
       </AppBar>

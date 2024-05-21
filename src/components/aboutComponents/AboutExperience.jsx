@@ -51,8 +51,10 @@ const workExperienceData = [
 
 const AboutExperience = () => {
   return (
-    <div className="area reveal">
-      <Typography variant="h4">Work Experience</Typography>
+    <div className="area">
+      <Typography variant="h4" className="reveal">
+        Work Experience
+      </Typography>
       <Container
         sx={{
           display: "flex",

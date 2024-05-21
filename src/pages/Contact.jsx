@@ -11,9 +11,10 @@ import {
   Stack,
 } from "@mui/material";
 import CopyEmail from "../components/contactComponents/CopyEmail";
+import MapRender from "../components/contactComponents/MapRender";
 
 const gridItemStyles = {
-  padding: "1rem 2rem",
+  padding: "0.6rem 1.2rem",
   borderRadius: "10px",
   transition: "background .4s ease",
   ":hover": {
@@ -42,22 +43,14 @@ const Contact = () => {
           console.log("SUCCESS!");
         },
         (error) => {
-          console.log("Failed!", error.text);
+          console.log("Failed!", error);
         }
       );
     reset();
   };
 
   return (
-    <div
-      className="main-content contact"
-      style={{
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <div className="main-content contact">
       <Container>
         <Grid
           container
@@ -71,38 +64,10 @@ const Contact = () => {
             margin: "0 auto",
           }}
         >
-          <Grid
-            xs={12}
-            sm={12}
-            md={6}
-            sx={{
-              ...gridItemStyles,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: "1rem",
-            }}
-          >
-            <Stack>
-              <Typography variant="h4">Location</Typography>
-              <Typography variant="h6">Cluj-Napoca</Typography>
-            </Stack>
-            <Stack>
-              <Typography variant="h4">Contact Information</Typography>
-              <Typography
-                variant="h6"
-                sx={{ display: "flex", flexDirection: "row", gap: "0.5rem" }}
-              >
-                Email:
-                <a className="emailLink" href={"mailto:" + { email }}>
-                  {email}
-                </a>
-                <CopyEmail email={email} />
-              </Typography>
-            </Stack>
-          </Grid>
           <Grid xs={12} sm={12} md={6} sx={gridItemStyles}>
-            <Typography variant="h4">Contact me</Typography>
+            <Typography variant="h4" className="reveal">
+              Contact me
+            </Typography>
             <FormControl
               ref={form}
               component="form"
@@ -167,6 +132,46 @@ const Contact = () => {
                 Submit
               </Button>
             </FormControl>
+          </Grid>
+          <Grid
+            xs={12}
+            sm={12}
+            md={6}
+            sx={{
+              ...gridItemStyles,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "0.6rem",
+            }}
+          >
+            <Stack>
+              <Typography variant="h4">Location</Typography>
+              <Typography variant="h6">Cluj-Napoca</Typography>
+            </Stack>
+            <Stack>
+              <Typography variant="h4">Contact Information</Typography>
+              <Typography
+                variant="h6"
+                sx={{ display: "flex", flexDirection: "row", gap: "0.5rem" }}
+              >
+                Email:
+                <a className="emailLink" href={"mailto:" + { email }}>
+                  {email}
+                </a>
+                <CopyEmail email={email} />
+              </Typography>
+            </Stack>
+            <Stack
+              sx={{
+                width: "100%",
+                minHeight: "300px",
+                // height: "100%",
+                padding: "0",
+              }}
+            >
+              <MapRender />
+            </Stack>
           </Grid>
         </Grid>
       </Container>

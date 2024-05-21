@@ -29,8 +29,10 @@ const educationData = [
 
 const AboutCertificates = () => {
   return (
-    <div className="area reveal">
-      <Typography variant="h4">Certificates</Typography>
+    <div className="area">
+      <Typography variant="h4" className="reveal">
+        Certificates
+      </Typography>
 
       {educationData.map((item) => (
         <List key={item.id}>

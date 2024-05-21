@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, Typography, Stack } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
-import MoodBadIcon from "@mui/icons-material/MoodBad";
+import PersonIcon from "@mui/icons-material/Person";
+import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 
 const softSkillsData = [
   {
@@ -92,8 +92,10 @@ const strongSkillsData = [
 
 export const StrongSkills = () => {
   return (
-    <div className="area reveal">
-      <Typography variant="h4">Work Skills</Typography>
+    <div className="area">
+      <Typography variant="h4" className="reveal">
+        Work Skills
+      </Typography>
       <Grid container>
         {strongSkillsData.map((item) => (
           <Grid item xs={6} sx={{ minHeight: "72px" }} key={item.id}>
@@ -115,8 +117,10 @@ export const StrongSkills = () => {
 };
 export const SoftSkills = () => {
   return (
-    <div className="area reveal">
-      <Typography variant="h4">Soft Skills</Typography>
+    <div className="area">
+      <Typography variant="h4" className="reveal">
+        Soft Skills
+      </Typography>
       <Grid container>
         {softSkillsData.map((item) => (
           <Grid item xs={6} sx={{ minHeight: "72px" }} key={item.id}>
@@ -124,9 +128,9 @@ export const SoftSkills = () => {
             <Stack direction="row">
               {Array.from({ length: 5 }).map((_, index) =>
                 index < item.grade ? (
-                  <EmojiEmotionsIcon key={index} />
+                  <PersonIcon key={index} />
                 ) : (
-                  <MoodBadIcon key={index} />
+                  <PermIdentityIcon key={index} />
                 )
               )}
             </Stack>
