@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "0.1.0",
-  "homepage": "https://andreibarari.github.io/website/",
+  "homepage": "https://AndreiBarari.github.io/website/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
