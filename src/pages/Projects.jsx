@@ -9,28 +9,28 @@ const Projects = () => {
       {
         id: 1,
         title: "Food Palace",
-        desc: "Website created in order for me to better understand ReactJS",
+        desc: "Minimalistic food-ordering website created in order for me to better understand ReactJS",
         inputId: "slide1",
         link: "https://github.com/AndreiBarari/Food-Palace",
       },
       {
         id: 2,
         title: "About Me app",
-        desc: "Website create in order for me to better understand Scss",
+        desc: "Landing page style website create in order for me to better understand Scss",
         inputId: "slide2",
         link: "https://github.com/AndreiBarari/About-me",
       },
       {
         id: 3,
         title: "Vanilla apps",
-        desc: "A series of small challenges I undertook in order to better understand HTML5, CSS3 and JavaScript",
+        desc: "A series of small challenges I undertook in the beginning of my journey into web development in order to better understand HTML5, CSS3 and JavaScript",
         inputId: "slide3",
         link: "https://github.com/AndreiBarari/Vanilla-apps",
       },
       {
         id: 4,
         title: "Front-End Mentor",
-        desc: "My completed challenges from FrontendMentor. More to come",
+        desc: "My completed challenges from FrontendMentor. Continuous development.",
         inputId: "slide4",
         link: "https://github.com/AndreiBarari/FrontendMentorProjects",
       },
@@ -46,7 +46,6 @@ const Projects = () => {
   );
 
   const [checkedId, setCheckedId] = useState(null);
-  console.log(checkedId);
   const [currentChecked, setCurrentChecked] = useState(null);
 
   useEffect(() => {

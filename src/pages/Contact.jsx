@@ -23,6 +23,10 @@ const gridItemStyles = {
 };
 
 const Contact = () => {
+  const emailService = process.env.REACT_APP_EMAIL_SERVICE_TOKEN;
+  const emailTemplate = process.env.REACT_APP_EMAIL_TEMPLATE_TOKEN;
+  const emailAccess = process.env.REACT_APP_EMAIL_PUBLIC_TOKEN;
+
   const form = useRef();
 
   const email = "b.andrei91@yahoo.com";
@@ -35,8 +39,8 @@ const Contact = () => {
 
   const onSubmit = () => {
     emailjs
-      .sendForm("service_9f0316n", "template_2tnwyvi", form.current, {
-        publicKey: "YiGOHRuuU1FcA-kNl",
+      .sendForm(emailService, emailTemplate, form.current, {
+        publicKey: emailAccess,
       })
       .then(
         () => {
