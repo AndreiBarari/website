@@ -1,8 +1,8 @@
 {
   "name": "website",
   "version": "0.1.0",
-  "homepage": "https://andrei-dev.net/website",
   "private": true,
+  "homepage": "https://andrei-dev.net",
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.11.4",
