@@ -2,6 +2,7 @@ import * as React from "react";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
+import { useEffect } from "react";
 
 function ScrollToTop(props) {
   const { children, window } = props;
@@ -18,10 +19,25 @@ function ScrollToTop(props) {
 
     if (anchor) {
       anchor.scrollIntoView({
+        behavior: "smooth",
         block: "center",
       });
     }
   };
+
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      html {
+        scroll-behavior: smooth;
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   return (
     <Fade in={trigger}>
