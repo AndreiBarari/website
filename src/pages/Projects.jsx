@@ -15,10 +15,10 @@ const Projects = () => {
       },
       {
         id: 2,
-        title: "About Me app",
-        desc: "Landing page style website create in order for me to better understand Scss",
+        title: "Oportunitati si Cariere",
+        desc: "It is an NGO where I contributed as a volunteer, working on various aspects of the project from HTML structure, to CSS styling and JS functionality",
         inputId: "slide2",
-        link: "https://github.com/AndreiBarari/About-me",
+        link: "https://github.com/peviitor-ro/oportunitatisicariere",
       },
       {
         id: 3,
