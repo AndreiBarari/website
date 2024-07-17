@@ -36,7 +36,7 @@ const Projects = () => {
       },
       {
         id: 5,
-        title: "Coming Soon",
+        title: "Coming Soon...",
         desc: "Stay tuned or check my github profile in order to see all my projects",
         inputId: "slide5",
         link: "https://github.com/AndreiBarari",
